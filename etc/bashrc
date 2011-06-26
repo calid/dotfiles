@@ -1,0 +1,40 @@
+#
+# /etc/bash.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# PS1='[\u@\h \W]\$ '
+
+if [ $UID == 0 ]
+then
+    export PROMPT_COLOR=31
+else
+    export PROMPT_COLOR=32
+fi
+
+PS2='> '
+PS3='> '
+PS4='+ '
+
+case ${TERM} in
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
+    PS1="\n\[\e[$PROMPT_COLOR;1m\]\u@\h \j \w\n\[\e[$PROMPT_COLOR;1m\]\\$ \[\e[0m\]"
+                                                        
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
+    PS1="\n\[\e]2;\$(pwd | awk -v home=\$HOME -v tilde='~' '{gsub(home,tilde,\$0); print \$0}')\e\\\\\]\[\e[$PROMPT_COLOR;1m\]\u@\h \j \w\n\[\e[$PROMPT_COLOR;1m\]\\$ \[\e[0m\]"
+    ;;
+esac
+
+[ -r /etc/bash_completion   ] && . /etc/bash_completion
+
+
+set -o vi
+stty ixoff -ixon
+
+alias ls='ls --color=auto'
+alias diff='colordiff -u'
