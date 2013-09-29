@@ -3,7 +3,7 @@ urxvt.background: #1c1c1c
 urxvt.foreground: #dbdbdb
 urxvt.cursorUnderline: true
 urxvt.underlineColor: #FFFF00
-urxvt.font: xft:DejaVu Sans Mono-9:spacing=mono:antialias=true:autohint=true:dpi=120
+urxvt.font: xft:DejaVu Sans Mono-9:spacing=mono:antialias=true:autohint=true
 
 urxvt.scrollColor: #5f5f5f
 urxvt.fading: 0
