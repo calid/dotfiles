@@ -1,3 +1,5 @@
+[color]
+    ui = always
 [core]
 	excludesfile = /etc/gitignore
 [push]

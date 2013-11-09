@@ -19,6 +19,3 @@ fi
 
 set -o vi
 stty -ixon
-
-alias ls='ls --color=auto'
-alias diff='colordiff -u'
