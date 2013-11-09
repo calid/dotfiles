@@ -1,7 +1,5 @@
 [core]
 	excludesfile = /etc/gitignore
-[push]
-	default = simple
 [user]
 	email = calid1984@gmail.com
 	name = Dylan Cali
