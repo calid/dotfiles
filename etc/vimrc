@@ -1,25 +1,12 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim72/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
 
 set t_Co=256
-colorscheme wombat256mod
-syntax on
-filetype plugin on
-filetype indent on
 
+syntax on
+colorscheme wombat256mod
+
+filetype plugin indent on
+
+set backspace=indent,eol,start
 set nocompatible
 set nu
 set expandtab
@@ -28,20 +15,29 @@ set sw=4
 set ts=4
 set hidden
 set hls
-set mouse=a
 set ignorecase
+set ruler
+set vb t_vb=
 
-nnoremap ,bq :qa<cr>
-nnoremap ,bd :bd<cr>
-nnoremap <silent> ,cs :let @/ = ""<cr>
-nnoremap <silent> ,vs :vsplit<cr>
-nnoremap <silent> <F10> :set invpaste<cr>
+set pastetoggle=<F10>
 
-nnoremap <c-p> :bp<cr>
-nnoremap <c-n> :bn<cr>
+nmap ,bq :qa<cr>
+nmap ,bd :bd<cr>
+nmap <silent> ,cs :let @/ = ""<cr>
 
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-q> <c-w>q
+nmap <c-p> :bp<cr>
+nmap <c-n> :bn<cr>
+
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-q> <c-w>q
+
+vmap ,aa :Align
+
+map <silent> ,wb :%s:\s\+$::<cr>
+map <silent> ,mm :w<cr>:silent make<cr>:cope<cr>:redraw!<cr>
+
+set shortmess+=a
+map ,co :cope<cr>
