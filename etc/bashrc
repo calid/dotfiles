@@ -7,7 +7,7 @@
 
 if [[ -d /etc/profile.d ]]
 then
-    for f in /etc/profile.d/*
+    for f in /etc/profile.d/*.sh
     do
         . $f
     done
