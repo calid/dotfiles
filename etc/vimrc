@@ -11,11 +11,13 @@ set nocompatible
 set nu
 set expandtab
 set autoindent
+set smarttab
 set sw=4
 set ts=4
 set hidden
 set hls
 set ignorecase
+set smartcase
 set ruler
 set vb t_vb=
 
