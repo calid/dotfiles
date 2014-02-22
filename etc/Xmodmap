@@ -1,10 +1,2 @@
-remove Lock    = Caps_Lock
-remove Control = Control_R
-
+remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
-
-keycode 105 = Super_L
-keycode 133 = Control_R
-
-clear mod4
-add Control = Control_R
