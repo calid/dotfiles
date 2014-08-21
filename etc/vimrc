@@ -1,59 +1,138 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-set t_Co=256
+"
+" Basic editor settings
+"
+    set t_Co=256
 
-syntax on
-colorscheme wombat256mod
+    syntax on
+    colorscheme wombat256mod
 
-filetype plugin indent on
+    filetype plugin indent on
 
-set backspace=indent,eol,start
-set nocompatible
-set nu
-set expandtab
-set autoindent
-set smarttab
-set sw=4
-set ts=4
-set hidden
-set hls
-set ignorecase
-set smartcase
-set ruler
-set vb t_vb=
+    set autoindent
+    set backspace=indent,eol,start
+    set complete-=i
+    set cursorline
+    set expandtab
+    set hidden
+    set hls
+    set ignorecase
+    set incsearch
+    set mouse=
+    set nocompatible
+    set nofoldenable
+    set nu
+    set pastetoggle=<F10>
+    set ruler
+    set shiftround
+    set shortmess+=a
+    set smartcase
+    set smartindent
+    set smarttab
+    set sw=4
+    set ts=4
+    set vb t_vb=
 
-set pastetoggle=<F10>
+"
+" Basic editor bindings
+"
+    let mapleader = ","
 
-nmap ,bq :qa<cr>
-nmap ,bd :bd<cr>
-nmap <silent> ,cs :let @/ = ""<cr>
+    nmap <Leader>bq :qa<cr>
+    nmap <Leader>bd :bd<cr>
+    nmap <silent> <Leader>cs :let @/ = ""<cr>
 
-nmap <c-p> :bp<cr>
-nmap <c-n> :bn<cr>
+    nmap <c-p> :bp<cr>
+    nmap <c-n> :bn<cr>
 
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-q> <c-w>q
+    nmap <c-h> <c-w>h
+    nmap <c-l> <c-w>l
+    nmap <c-j> <c-w>j
+    nmap <c-k> <c-w>k
+    nmap <c-q> <c-w>q
 
-vmap ,aa :Align
+    vmap <Leader>aa :Align
 
-map <silent> ,wb :%s:\s\+$::<cr>
-map <silent> ,mm :w<cr>:silent make<cr>:cope<cr>:redraw!<cr>
+    map <silent> <Leader>wb :%s:\s\+$::<cr>
+    map <silent> <Leader>mm :w<cr>:silent make<cr>:cope<cr>:redraw!<cr>
 
-set shortmess+=a
-map ,co :cope<cr>
+    map <Leader>co :cope<cr>
 
+"
+" Pathogen
+"
+    runtime bundle/vim-pathogen/autoload/pathogen.vim
+    execute pathogen#infect()
+
+"
+" silver searcher
+"
+    nnoremap <Leader>ag :Ag <cword><cr>
+
+"
+" CtrlP
+"
+    let g:ctrlp_map = ''
+    let g:ctrlp_match_window_reversed = 0
+    " let g:ctrlp_working_path_mode = 'w'
+    let g:ctrlp_by_filename = 0
+    let g:ctrlp_user_command = {
+        \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        \ },
+        \ 'fallback': 'find %s -type f'
+    \ }
+    nnoremap <Leader>bf :CtrlP<cr>
+    nnoremap <Leader>bb :CtrlPBuffer<cr>
+    nnoremap <Leader>bt :CtrlPTag<cr>
+
+"
+" Tagbar
+"
+    let g:tagbar_width = 45
+    let g:tagbar_zoomwidth = 90
+    let g:tagbar_autopreview = 0
+    let g:tagbar_show_linenumbers = 1
+    let g:tagbar_indent = 0
+    let g:tagbar_compact = 1
+    let g:tagbar_autofocus = 1
+    let g:tagbar_autoclose = 1
+    nnoremap <Leader>to :TagbarToggle<cr>
+
+    nnoremap <Leader>ta :ta
+    nnoremap <Leader>tn :tnext<cr>
+    nnoremap <Leader>tp :tprevious<cr>
+
+"
 " Git Gutter
+"
     highlight SignColumn term=standout ctermfg=14 ctermbg=234 guifg=Cyan guibg=Grey
 
-    highlight GitGutterAdd          ctermfg=2 ctermbg=0 guifg=#009900 guibg=Black
-    highlight GitGutterChange       ctermfg=3 ctermbg=0 guifg=#bbbb00 guibg=Black
-    highlight GitGutterDelete       ctermfg=1 ctermbg=0 guifg=#ff2222 guibg=Black
+    highlight GitGutterAdd          ctermfg=2   ctermbg=0 guifg=#009900 guibg=Black
+    highlight GitGutterChange       ctermfg=3   ctermbg=0 guifg=#bbbb00 guibg=Black
+    highlight GitGutterDelete       ctermfg=1   ctermbg=0 guifg=#ff2222 guibg=Black
     highlight GitGutterChangeDelete ctermfg=171 ctermbg=0 guifg=#ff2222 guibg=Black
 
     let g:gitgutter_sign_added = '++'
     let g:gitgutter_sign_modified = '~~'
     let g:gitgutter_sign_removed = '__'
     let g:gitgutter_sign_modified_removed = '≂≂'
+
+"
+" Toggle tw=80
+"
+    nnoremap <silent> <Leader>tw :TwToggle<cr>
+    command TwToggle call ToggleTextWidth()
+
+    function ToggleTextWidth()
+    if !exists("b:toggleTw") || !b:toggleTw
+        let b:toggleTw=1
+        set tw=78
+    else
+        let b:toggleTw=0
+        set tw=0
+    endif
+
+    echo "tw="&tw
+    endfunction
