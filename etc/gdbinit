@@ -1,0 +1,22 @@
+set history filename ~/.gdb_history
+set history save
+
+define ps
+step
+info args
+info locals
+display
+end
+
+define pn
+next
+info args
+info locals
+display
+end
+
+define pi
+info args
+info locals
+display
+end

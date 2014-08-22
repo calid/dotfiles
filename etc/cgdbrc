@@ -1,0 +1,10 @@
+set ars
+set timeout off
+set ttimeout off
+
+set cgdbmodekey=<Up>
+
+imap <C-k> <Up>:set<Space>cgdbmodekey=<Esc><CR>
+map <C-j> :set<Space>cgdbmodekey=<Up><CR>i
+
+hi SelectedLineNr cterm=bold ctermfg=Yellow

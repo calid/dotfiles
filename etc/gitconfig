@@ -1,9 +1,15 @@
+[user]
+    email = calid1984@gmail.com
+    name  = Dylan Cali
+
+[github]
+    user = calid
+
 [color]
     ui = always
+
 [core]
-	excludesfile = /etc/gitignore
+    excludesfile = /etc/gitignore
+
 [push]
-	default = current
-[user]
-	email = calid1984@gmail.com
-	name = Dylan Cali
+    default = current
