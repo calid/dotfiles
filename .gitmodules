@@ -13,3 +13,6 @@
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
+[submodule "vim/bundle/vim-trailing-whitespace"]
+	path = vim/bundle/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace.git
