@@ -26,6 +26,9 @@ function _set_ps1 {
     yellow="${e}33;1${en}"
     blue="${e}34;1${en}"
 
+    bind 'set vi-mode-str1 [30;1m▶[0m'
+    bind 'set vi-mode-str2 [33;1m▶[0m'
+
     if [ $UID == 0 ]
     then
         prompt_color=${red}
@@ -35,9 +38,9 @@ function _set_ps1 {
 
     if [ $state -eq 0 ]
     then
-        state="${green}✔${x}"
+        state="${gray}[${green}✔${gray}]${x}"
     else
-        state="${red}✘${x}"
+        state="${gray}[${red}✘${gray}]${x}"
     fi
 
     user=$(whoami)
@@ -54,5 +57,5 @@ function _set_ps1 {
 
     path="${gray}${cwd}${x}"
 
-    PS1="${start}${git}${path}\n${state} "
+    PS1="${start}${git}${path}\n${state}\\m "
 }
