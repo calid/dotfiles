@@ -19,14 +19,14 @@ function _set_ps1 {
     e="\[\e["
     en="m\]"
     x="${e}0${en}"
-    gray="${e}1;38;5;246${en}"
+    gray="${e}38;5;246${en}"
     red="${e}31;1${en}"
     green="${e}32;1${en}"
-    altgreen="${e}1;38;5;113${en}"
+    altgreen="${e}38;5;113${en}"
     yellow="${e}33;1${en}"
-    blue="${e}1;38;5;111${en}"
+    blue="${e}38;5;111${en}"
 
-    bind 'set vi-mode-str1 [1;38;5;246m▶[0m'
+    bind 'set vi-mode-str1 [38;5;246m▶[0m'
     bind 'set vi-mode-str2 [33;1m▶[0m'
 
     if [ $UID == 0 ]
