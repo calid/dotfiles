@@ -19,20 +19,21 @@ function _set_ps1 {
     e="\[\e["
     en="m\]"
     x="${e}0${en}"
-    gray="${e}30;1${en}"
+    gray="${e}1;38;5;246${en}"
     red="${e}31;1${en}"
     green="${e}32;1${en}"
+    altgreen="${e}1;38;5;113${en}"
     yellow="${e}33;1${en}"
-    blue="${e}34;1${en}"
+    blue="${e}1;38;5;111${en}"
 
-    bind 'set vi-mode-str1 [30;1m▶[0m'
+    bind 'set vi-mode-str1 [1;38;5;246m▶[0m'
     bind 'set vi-mode-str2 [33;1m▶[0m'
 
     if [ $UID == 0 ]
     then
         prompt_color=${red}
     else
-        prompt_color=${green}
+        prompt_color=${altgreen}
     fi
 
     if [ $state -eq 0 ]
@@ -42,11 +43,7 @@ function _set_ps1 {
         state="${gray}[${red}✘${gray}]${x}"
     fi
 
-    user=$(whoami)
-    host=$(hostname)
-    cwd=$(pwd)
-
-    start="\n${prompt_color}${user}@${host}${x}"
+    start="\n${prompt_color}\h${x}"
 
     git=$(__git_ps1)
     if [ "$git" = '' ]
@@ -54,7 +51,7 @@ function _set_ps1 {
         git=' '
     fi
 
-    path="${gray}${cwd}${x}"
+    path="${gray}\w${x}"
 
     PS1="${start}${git}${path}\n${state}\\m "
 }
