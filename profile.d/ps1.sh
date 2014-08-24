@@ -11,6 +11,8 @@ shopt -s histappend                      # append to history, don't overwrite it
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="_set_ps1; history -a; history -c; history -r"
 
+. "$(dirname $(readlink ${BASH_SOURCE[0]}))/../completion.d/git"
+
 function _set_ps1 {
     state=$?
 
