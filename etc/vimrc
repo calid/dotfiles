@@ -32,7 +32,8 @@
     set sw=4
     set ts=4
     set sts=4
-    set tw=78
+    let g:maxwidth=72
+    let &tw=g:maxwidth
     set vb t_vb=
 
 "
@@ -122,7 +123,7 @@
     let g:gitgutter_sign_modified_removed = '≂≂'
 
 "
-" Toggle tw=78
+" Toggle tw
 "
     nnoremap <silent> <Leader>tw :TwToggle<cr>
     command TwToggle call ToggleTextWidth()
@@ -130,7 +131,7 @@
     function ToggleTextWidth()
     if !exists("b:toggleTw") || !b:toggleTw
         let b:toggleTw=1
-        set tw=78
+        let &tw=g:maxwidth
     else
         let b:toggleTw=0
         set tw=0
@@ -148,7 +149,7 @@
     function ToggleColorColumn()
     if !exists("b:toggleCC") || !b:toggleCC
         let b:toggleCC=1
-        set colorcolumn=78
+        let &colorcolumn=g:maxwidth
     else
         let b:toggleCC=0
         set colorcolumn=
