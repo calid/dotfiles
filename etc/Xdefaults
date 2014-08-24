@@ -16,7 +16,7 @@ urxvt.color2:    #60fe57
 urxvt.color3:    #fefe57
 urxvt.color4:    #508eff
 urxvt.color5:    #fe57e5
-urxvt.color6:    #57eafe
+urxvt.color6:    #87ffff
 urxvt.color7:    #e2e2e2
 urxvt.color8:    #747474
 urxvt.color9:    #fe5757
@@ -24,7 +24,7 @@ urxvt.color10:   #60fe57
 urxvt.color11:   #fefe57
 urxvt.color12:   #508eff
 urxvt.color13:   #fe57e5
-urxvt.color14:   #57eafe
+urxvt.color14:   #87ffff
 urxvt.color15:   #e2e2e2
 
 urxvt.perl-ext-common: clipboard
