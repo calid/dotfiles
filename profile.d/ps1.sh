@@ -3,10 +3,11 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
-export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
-export HISTSIZE=100000                   # big big history
-export HISTFILESIZE=100000               # big big history
-shopt -s histappend                      # append to history, don't overwrite it
+export HISTCONTROL=ignoredups  # no duplicate entries
+export HISTSIZE=100000         # big big history
+export HISTFILESIZE=100000     # big big history
+shopt -s histappend            # append to history, don't overwrite it
+shopt -s histreedit            # allow re-editing failed hist expansion
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="_set_ps1; history -a; history -c; history -r"
