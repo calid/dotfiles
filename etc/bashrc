@@ -17,5 +17,4 @@ fi
     && . /usr/share/bash-completion/bash_completion
 
 
-set -o vi
 stty -ixon
