@@ -35,6 +35,7 @@
     let g:maxwidth=72
     let &tw=g:maxwidth
     set vb t_vb=
+    set modeline
 
 "
 " Basic editor bindings

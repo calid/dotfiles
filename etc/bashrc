@@ -1,20 +1,13 @@
-#
-# /etc/bash.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -d /etc/profile.d ]]
+if [ -d $HOME/.bashrc.d ]
 then
-    for f in /etc/profile.d/*.sh
+    for f in $HOME/.bashrc.d/*.sh
     do
         . $f
     done
 fi
 
-[ -r /usr/share/bash-completion/bash_completion ] \
-    && . /usr/share/bash-completion/bash_completion
-
-
-stty -ixon
+# vim: set filetype=sh:
