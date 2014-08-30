@@ -9,4 +9,4 @@ then
     . $HOME/.bashrc
 fi
 
-# vim: set filetype=sh:
+# vim: ft=sh

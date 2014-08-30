@@ -10,4 +10,4 @@ then
     done
 fi
 
-# vim: set filetype=sh:
+# vim: ft=sh
