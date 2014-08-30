@@ -13,25 +13,26 @@ set -e
 arg=$1
 
 maxcount=$(tput cols)
+
 declare -i maxcount
+declare -i margin
 declare -i outcount
+
+margin=15
 
 for c in {0..255};
 do
-    if [[ $arg == "html" ]]
-    then
-        code=$(perl -M'Color::ANSI::Util ansi256_to_rgb' \
-                    -E "say ansi256_to_rgb($c)")
+    printf "\e[1;38;5;${c}m%03d\e[0m " $c;
+    outcount+=5
 
-        printf "\e[1;38;5;${c}m%s\e[0m  " "#$code";
-        outcount+=9
-    else
-        printf "\e[1;38;5;${c}m%03d\e[0m  " $c;
-        outcount+=5
-    fi
+    code=$(perl -M'Color::ANSI::Util ansi256_to_rgb' \
+                -E "say ansi256_to_rgb($c)")
+
+    printf "(\e[1;38;5;${c}m%s\e[0m)  " "#$code";
+    outcount+=10
 
     # 10 chars seems a reasonable margin, and will cover both styles
-    if [[ $outcount -ge $(($maxcount-10)) ]]
+    if [[ $outcount -ge $(($maxcount-$margin)) ]]
     then
         printf "\n"
         outcount=0
