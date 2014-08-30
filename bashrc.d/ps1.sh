@@ -3,6 +3,8 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
+export GIT_PS1_SHOWUSER=1
+
 export HISTCONTROL=ignoredups  # no duplicate entries
 export HISTSIZE=100000         # big big history
 export HISTFILESIZE=100000     # big big history
@@ -20,12 +22,12 @@ function _set_ps1 {
     e="\[\e["
     en="m\]"
     x="${e}0${en}"
-    gray="${e}38;5;246${en}"
+    gray="${e}1;38;5;246${en}"
     red="${e}31;1${en}"
     green="${e}32;1${en}"
-    altgreen="${e}38;5;113${en}"
+    altgreen="${e}1;38;5;113${en}"
     yellow="${e}33;1${en}"
-    blue="${e}38;5;111${en}"
+    blue="${e}1;38;5;111${en}"
 
     bind 'set vi-mode-str1 [38;5;246m▶[0m'
     bind 'set vi-mode-str2 [33;1m▶[0m'
@@ -44,7 +46,12 @@ function _set_ps1 {
         state="${gray}[${red}✘${gray}]${x}"
     fi
 
-    start="\n${prompt_color}\h${x}"
+    if [[ $GIT_PS1_SHOWUSER -eq 0 ]]; then
+        start="\n${prompt_color}\h${x}"
+    else
+        start="\n${prompt_color}\u@\h${x}"
+    fi
+
 
     git=$(__git_ps1)
     if [ "$git" = '' ]
