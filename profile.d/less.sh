@@ -1,1 +1,1 @@
-export LESS=-R
+export LESS=-iR
