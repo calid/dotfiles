@@ -150,11 +150,11 @@
     function ToggleColorColumn()
     if !exists("b:toggleCC") || !b:toggleCC
         let b:toggleCC=1
-        let &colorcolumn=g:maxwidth
+        let &colorcolumn=g:maxwidth+1
     else
         let b:toggleCC=0
         set colorcolumn=
     endif
 
-    echo "cc="&cc
+    echo "tw="&tw
     endfunction
