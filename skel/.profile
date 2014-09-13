@@ -7,6 +7,4 @@ then
     done
 fi
 
-PATH=$HOME/bin:$PATH
-
 # vim: ft=sh
