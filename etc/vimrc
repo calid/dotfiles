@@ -55,8 +55,6 @@
     nmap <c-k> <c-w>k
     nmap <c-q> <c-w>q
 
-    vmap <Leader>aa :Align
-
     map <silent> <Leader>wb :%s:\s\+$::<cr>
     map <silent> <Leader>mm :w<cr>:silent make<cr>:cope<cr>:redraw!<cr>
 
@@ -90,6 +88,12 @@
     nnoremap <Leader>bf :CtrlP<cr>
     nnoremap <Leader>bb :CtrlPBuffer<cr>
     nnoremap <Leader>bt :CtrlPTag<cr>
+
+"
+" EasyAlign
+"
+    vmap <cr>       <Plug>(EasyAlign)
+    nmap <Leader>ea <Plug>(EasyAlign)
 
 "
 " Tagbar
