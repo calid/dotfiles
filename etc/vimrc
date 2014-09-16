@@ -32,8 +32,7 @@
     set sw=4
     set ts=4
     set sts=4
-    let g:maxwidth=72
-    let &tw=g:maxwidth
+    let g:maxwidth=78
     set vb t_vb=
     set modeline
 
@@ -146,19 +145,8 @@
     endfunction
 
 "
-" Toggle colorcolumn
+" colorcolumn
 "
-    nnoremap <silent> <Leader>ct :CtToggle<cr>
-    command CtToggle call ToggleColorColumn()
-
-    function ToggleColorColumn()
-    if !exists("b:toggleCC") || !b:toggleCC
-        let b:toggleCC=1
-        let &colorcolumn=g:maxwidth+1
-    else
-        let b:toggleCC=0
-        set colorcolumn=
-    endif
-
-    echo "tw="&tw
-    endfunction
+    " set "no man's land" past max line width to black background
+    let &colorcolumn=join(range(g:maxwidth+1,999),",")
+    hi ColorColumn ctermbg=232 guibg=#080808
