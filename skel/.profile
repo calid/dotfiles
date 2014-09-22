@@ -1,3 +1,6 @@
+#
+# .profile
+#
 
 if [ -d $HOME/.profile.d ]
 then

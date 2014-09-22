@@ -1,3 +1,6 @@
+#
+# .bash_profile
+#
 
 if [ -f $HOME/.profile ]
 then
