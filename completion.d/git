@@ -241,7 +241,7 @@ __git_ps1 ()
 				r="|BISECTING"
 			fi
 
-            # branch
+			# branch
 			b="$(git symbolic-ref HEAD 2>/dev/null)" || {
 
 				b="$(
@@ -268,7 +268,7 @@ __git_ps1 ()
 		local u="" # untracked ?
 		local c="" # bare/empty
 		local p="" # upstream <, >, <>
-        local d="" # describe <tag>[-N]
+		local d="" # describe <tag>[-N]
 
 		if [ "true" = "$(git rev-parse --is-inside-git-dir 2>/dev/null)" ]; then
 			if [ "true" = "$(git rev-parse --is-bare-repository 2>/dev/null)" ]; then
@@ -301,30 +301,30 @@ __git_ps1 ()
 			if [ -n "${GIT_PS1_SHOWUPSTREAM-}" ]; then
 				__git_ps1_show_upstream
 
-                if [ -n "$p" ]; then
+				if [ -n "$p" ]; then
 					p="\[\e[1;38;5;111m\]$p\[\e[0m\]"
-                fi
+				fi
 			fi
 
-            if [ -n "${GIT_PS1_SHOWDESCRIBE-}" ]; then
-                d="$(git describe --tags 2>/dev/null | \
-                     sed -r 's/-g[0-9a-zA-Z]+$//')"
+			if [ -n "${GIT_PS1_SHOWDESCRIBE-}" ]; then
+				d="$(git describe --tags 2>/dev/null | \
+					 sed -r 's/-g[0-9a-zA-Z]+$//')"
 
-                if [ -n "$d" ]; then
-                    if [ $(git describe --tags --exact-match 2>/dev/null) ]
-                    then
-                        d="\[\e[1;38;5;111m\][$d]\[\e[0m\]"
-                    else
-                        d="\[\e[1;38;5;228m\][$d]\[\e[0m\]"
-                    fi
-                fi
-            fi
+				if [ -n "$d" ]; then
+					if [ $(git describe --tags --exact-match 2>/dev/null) ]
+					then
+						d="\[\e[1;38;5;111m\][$d]\[\e[0m\]"
+					else
+						d="\[\e[1;38;5;228m\][$d]\[\e[0m\]"
+					fi
+				fi
+			fi
 		fi
 
-        local f="$w$i$s$u"
-        printf -- "%s" " \[\e[1;38;5;111m\]"\
-            "($c${b##refs/heads/}$d$p${f:+ $f}$r\[\e[1;38;5;111m\])"\
-            "\[\e[0m\] "
+		local f="$w$i$s$u"
+		printf -- "%s" " \[\e[1;38;5;111m\]"\
+			"($c${b##refs/heads/}$d$p${f:+ $f}$r\[\e[1;38;5;111m\])"\
+			"\[\e[0m\] "
 	fi
 }
 
@@ -2729,3 +2729,5 @@ if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
 complete -o bashdefault -o default -o nospace -F _git git.exe 2>/dev/null \
 	|| complete -o default -o nospace -F _git git.exe
 fi
+
+# vim:noexpandtab:sw=4:ts=4:
