@@ -95,6 +95,13 @@
     nmap <Leader>ea <Plug>(EasyAlign)
 
 "
+" TComment
+"
+    execute tcomment#DefineType('java', '// %s')
+    execute tcomment#DefineType('java_inline', '/* %s */')
+    execute tcomment#DefineType('java_block',  '/*%s*/')
+
+"
 " Tagbar
 "
     let g:tagbar_width = 45
