@@ -1,6 +1,6 @@
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 alias gits='git status -s'
-alias ls='ls --color=always'
+alias ls='ls --color=auto'
 alias cpanm='cpanm -v'
 alias tree='tree -aC -I .git'
 alias diff='colordiff -u'
