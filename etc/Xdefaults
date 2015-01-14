@@ -27,4 +27,3 @@ urxvt.color13:   #fe57e5
 urxvt.color14:   #87ffff
 urxvt.color15:   #e2e2e2
 
-urxvt.selection-to-clipboard: true
