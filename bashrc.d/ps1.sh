@@ -5,14 +5,21 @@ export GIT_PS1_SHOWUPSTREAM=auto
 
 export PS1_SHOWUSER=1
 
-export HISTCONTROL=ignoredups  # no duplicate entries
-export HISTSIZE=100000         # big big history
-export HISTFILESIZE=100000     # big big history
-shopt -s histappend            # append to history, don't overwrite it
-shopt -s histreedit            # allow re-editing failed hist expansion
+export HISTSIZE=100000      # big big history
+export HISTFILESIZE=100000  # big big history
 
-# Save and reload the history after each command finishes
-export PROMPT_COMMAND="_set_ps1; history -a; history -c; history -r"
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+shopt -s histappend # append to history, don't overwrite it
+shopt -s histreedit # allow re-editing failed hist expansion
+
+# complicated gymnastics to get cross term deduped history working
+PROMPT_COMMAND="history -n;" # load the full history file
+PROMPT_COMMAND+="history -w;" # write back out the now complete hist buffer
+PROMPT_COMMAND+="history -c;" # clear the buffer
+PROMPT_COMMAND+="history -r;" # reload the now complete hist file
+PROMPT_COMMAND+="_set_ps1" # finally run the prompt command
+
+export PROMPT_COMMAND
 
 . "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/../completion.d/git"
 
