@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+
+sub on_sel_grab {
+    my $sel = $_[0]->selection;
+    system(qq(echo "$sel" | xsel -pi && xsel -po | xsel -bi));
+}
