@@ -13,11 +13,11 @@ shopt -s histappend # append to history, don't overwrite it
 shopt -s histreedit # allow re-editing failed hist expansion
 
 # complicated gymnastics to get cross term deduped history working
-PROMPT_COMMAND="history -n;" # load the full history file
+PROMPT_COMMAND="_set_ps1;"    # run the prompt command
+PROMPT_COMMAND+="history -n;" # load the full history file
 PROMPT_COMMAND+="history -w;" # write back out the now complete hist buffer
 PROMPT_COMMAND+="history -c;" # clear the buffer
 PROMPT_COMMAND+="history -r;" # reload the now complete hist file
-PROMPT_COMMAND+="_set_ps1" # finally run the prompt command
 
 export PROMPT_COMMAND
 
