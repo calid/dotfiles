@@ -1,0 +1,4 @@
+set columns=82
+set guioptions-=T " remove toolbar
+set guioptions-=r " remove right scrollbar
+set guioptions-=l " remove left scrollbar
