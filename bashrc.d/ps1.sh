@@ -80,6 +80,8 @@ function _set_ps1 {
 
     if [ $status -eq 0 ]; then
         state="${gray}[${green}✔${gray}]${x}"
+    elif [ $status -eq 1 ]; then
+        state="${gray}[${red}✘${gray}]${x}"
     else
         status="$(_status_or_signal $status)"
         state="${gray}[${red}${status}${gray}]${x}"
