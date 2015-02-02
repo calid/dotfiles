@@ -6,9 +6,8 @@ urxvt.underlineColor: #FFFF00
 urxvt.font: xft:DejaVu Sans Mono-9:spacing=mono:antialias=true:autohint=true
 
 urxvt.scrollColor: #5f5f5f
+urxvt.scrollBar: 0
 urxvt.fading: 0
-urxvt.scrollBar_right: true
-urxvt.scrollBar_floating: true
 
 urxvt.color0:    #000000
 urxvt.color1:    #fe5757
