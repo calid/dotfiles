@@ -12,16 +12,33 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 shopt -s histappend # append to history, don't overwrite it
 shopt -s histreedit # allow re-editing failed hist expansion
 
+scriptdir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
+. "$scriptdir/bash-preexec/bash-preexec.sh"
+. "$scriptdir/../completion.d/git"
+
+# equivalent of PROMPT_COMMAND
+function precmd {
+    _set_ps1
+    _refresh_history
+    _set_window_title "bash on $(whoami)@$(hostname):$(pwd)"
+}
+
+function preexec {
+    _set_window_title "$1"
+}
+
 # complicated gymnastics to get cross term deduped history working
-PROMPT_COMMAND="_set_ps1;"    # run the prompt command
-PROMPT_COMMAND+="history -n;" # load the full history file
-PROMPT_COMMAND+="history -w;" # write back out the now complete hist buffer
-PROMPT_COMMAND+="history -c;" # clear the buffer
-PROMPT_COMMAND+="history -r;" # reload the now complete hist file
+function _refresh_history {
+    history -n # load the full history file
+    history -w # write back out the now complete hist buffer
+    history -c # clear the buffer
+    history -r # reload the now complete hist file
+}
 
-export PROMPT_COMMAND
-
-. "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/../completion.d/git"
+function _set_window_title {
+    local cmd="$1"
+    printf "\\033]2;$cmd\\033\\\\"
+}
 
 # get the last signal number listed by kill -l
 MAX_SIGNUM="$(kill -l | awk 'END {f=$(NF-1);gsub(")","",f);print f}')"

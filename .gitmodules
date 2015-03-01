@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-easy-align"]
 	path = vim/bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "bashrc.d/bash-preexec"]
+	path = bashrc.d/bash-preexec
+	url = git@github.com:rcaloras/bash-preexec.git
