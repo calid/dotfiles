@@ -5,13 +5,6 @@ export GIT_PS1_SHOWUPSTREAM=auto
 
 export PS1_SHOWUSER=1
 
-export HISTSIZE=100000      # big big history
-export HISTFILESIZE=100000  # big big history
-
-export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
-shopt -s histappend # append to history, don't overwrite it
-shopt -s histreedit # allow re-editing failed hist expansion
-
 scriptdir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 . "$scriptdir/bash-preexec/bash-preexec.sh"
 . "$scriptdir/../completion.d/git"
@@ -28,11 +21,15 @@ function preexec {
 }
 
 # complicated gymnastics to get cross term deduped history working
+export HISTSIZE=100000      # big big history
+export HISTFILESIZE=100000  # big big history
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+shopt -s histappend # append to history, don't overwrite it
+shopt -s histreedit # allow re-editing failed hist expansion
+
 function _refresh_history {
-    history -n # load the full history file
-    history -w # write back out the now complete hist buffer
-    history -c # clear the buffer
-    history -r # reload the now complete hist file
+    history -a # append history lines from this session to history file
+    history -n # read all history lines not already read from history file
 }
 
 function _set_window_title {
