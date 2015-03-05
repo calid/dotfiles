@@ -29,7 +29,8 @@ shopt -s histreedit # allow re-editing failed hist expansion
 
 function _refresh_history {
     history -a # append history lines from this session to history file
-    history -n # read all history lines not already read from history file
+    history -c # clear history buffer
+    history -r # reload history from now complete history file
 }
 
 function _set_window_title {
