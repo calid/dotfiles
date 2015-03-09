@@ -102,6 +102,14 @@
     execute tcomment#DefineType('java_block',  '/*%s*/')
 
 "
+" UltiSnips
+"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"
 " Tagbar
 "
     let g:tagbar_width = 45

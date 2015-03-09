@@ -1,0 +1,43 @@
+snippet us
+use strict;
+use warnings;
+
+$1
+endsnippet
+
+snippet pa
+package $1;
+
+use strict;
+use warnings;
+
+$2
+
+1;
+endsnippet
+
+snippet moo
+package $1;
+
+use Moo;
+use namespace::clean;
+
+$2
+
+1;
+endsnippet
+
+snippet zmq
+use strict;
+use warnings;
+use v5.10;
+
+use ZMQ::FFI;
+use ZMQ::Constants qw($1);
+
+my $ctx = ZMQ::FFI->new();
+my $2 = $ctx->socket($3);
+$2->$4($5);
+
+$6
+endsnippet

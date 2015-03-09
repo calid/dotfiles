@@ -25,3 +25,6 @@
 [submodule "bashrc.d/bash-preexec"]
 	path = bashrc.d/bash-preexec
 	url = https://github.com/rcaloras/bash-preexec.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
