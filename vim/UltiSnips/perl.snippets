@@ -38,17 +38,39 @@ $2
 1;
 endsnippet
 
+snippet moor
+package $1;
+
+use Moo::Role;
+
+$2
+
+1;
+endsnippet
+
 snippet zmq
 use strict;
 use warnings;
 use v5.10;
 
 use ZMQ::FFI;
-use ZMQ::Constants qw($1);
+use ZMQ::FFI::Constants qw($1);
 
-my $ctx = ZMQ::FFI->new();
-my $2 = $ctx->socket($3);
-$2->$4($5);
-
-$6
+$0
 endsnippet
+
+snippet zms
+use strict;
+use warnings;
+use v5.10;
+
+use ZMQ::FFI;
+use ZMQ::FFI::Constants qw($1);
+
+my $ctx    = ZMQ::FFI->new();
+my $socket = $ctx->socket($1);
+$socket->$2($3);
+
+$0
+endsnippet
+
