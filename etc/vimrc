@@ -89,6 +89,11 @@
     nnoremap <Leader>bt :CtrlPTag<cr>
 
 "
+" NERDTree
+"
+    nnoremap <silent> <Leader>tr :NERDTreeToggle<cr>
+
+"
 " EasyAlign
 "
     vmap <cr>       <Plug>(EasyAlign)
