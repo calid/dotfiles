@@ -147,6 +147,10 @@
     let g:gitgutter_sign_removed = '__'
     let g:gitgutter_sign_modified_removed = '≂≂'
 
+    nnoremap <silent> <Leader>gn :GitGutterNextHunk<cr>
+    nnoremap <silent> <Leader>gp :GitGutterPrevHunk<cr>
+    nnoremap <silent> <Leader>gr :GitGutterRevertHunk<cr>
+
 "
 " Toggle tw
 "
