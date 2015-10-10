@@ -166,6 +166,23 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
     endfunction
 
 "
+" Toggle wr
+"
+    nnoremap <silent> <Leader>wr :WrToggle<cr>
+    command WrToggle call ToggleWrap()
+
+    function ToggleWrap()
+    if !exists("b:toggleWr") || !b:toggleWr
+        let b:toggleWr=1
+        set nowrap
+    else
+        let b:toggleWr=0
+        set wrap
+    endif
+
+    endfunction
+
+"
 " indentLine
 "
     let g:indentLine_enabled    = 0
