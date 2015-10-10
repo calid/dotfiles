@@ -1,4 +1,5 @@
 .ctags.tags
+*.class
 *.swp
 *.swo
 *.pyc
