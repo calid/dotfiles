@@ -165,6 +165,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
     endfunction
 
 "
+" indentLine
+"
+    let g:indentLine_enabled    = 0
+    let g:indentLine_color_term = 214
+    let g:indentLine_char = '│'
+    nnoremap <silent> <Leader>ir :IndentLinesToggle<cr>
+
+"
 " colorcolumn
 "
     " set "no man's land" past max line width to black background
