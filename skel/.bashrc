@@ -11,6 +11,7 @@ then
     do
         . $f
     done
+    unset f
 fi
 
 # vim: ft=sh

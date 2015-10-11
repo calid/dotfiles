@@ -9,6 +9,7 @@ export PS1_SHOWUSER=1
 scriptdir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 . "$scriptdir/bash-preexec/bash-preexec.sh"
 . "$scriptdir/../completion.d/git"
+unset scriptdir
 
 # equivalent of PROMPT_COMMAND
 function precmd {

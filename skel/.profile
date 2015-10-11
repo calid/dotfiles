@@ -8,6 +8,7 @@ then
     do
         . $f
     done
+    unset f
 fi
 
 PATH=$HOME/bin:$PATH
