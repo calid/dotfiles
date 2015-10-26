@@ -4,8 +4,8 @@
 set keyseq-timeout 0
 set editing-mode vi
 set show-mode-in-prompt on
-set vi-mode-str1 ""
-set vi-mode-str2 "!"
+set vi-ins-mode-string ""
+set vi-cmd-mode-string "!"
 
 set meta-flag on
 set input-meta on
