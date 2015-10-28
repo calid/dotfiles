@@ -86,7 +86,7 @@ function _set_ps1 {
     local path
 
     bind 'set vi-ins-mode-string \1\e[38;5;246m\2▶\1\e[0m\2'
-    bind 'set vi-cmd-mode-string \1\e[33;1m\2▶\1\e[0m\2'
+    bind 'set vi-cmd-mode-string \1\e[33;1m\2⚑\1\e[0m\2'
 
     if [ $UID == 0 ]
     then
