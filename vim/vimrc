@@ -154,6 +154,12 @@
     nnoremap <silent> <Leader>gr :GitGutterRevertHunk<cr>
 
 "
+" vim-fugitive
+"
+    nnoremap <silent> <Leader>gb :Gblame<cr>
+    vnoremap <silent> <Leader>gb :Gblame<cr>
+
+"
 " Toggle tw
 "
     nnoremap <silent> <Leader>tw :TwToggle<cr>
