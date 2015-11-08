@@ -35,6 +35,7 @@
     let g:maxwidth=78
     set vb t_vb=
     set modeline
+    set tags+=.ctags.tags
 
 "
 " Basic editor bindings
