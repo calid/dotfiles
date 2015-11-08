@@ -18,7 +18,7 @@
     set hls
     set ignorecase
     set incsearch
-    set mouse=a
+    set mouse=
     set nocompatible
     set nofoldenable
     set nu
