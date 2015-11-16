@@ -82,6 +82,7 @@
         \ 'types': {
             \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
             \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ 3: ['.svn', 'ctrlp_svn_user_command.sh %s'],
         \ },
         \ 'fallback': 'find %s -type f'
     \ }
