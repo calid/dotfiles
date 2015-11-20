@@ -19,6 +19,6 @@ if ( -f $ignore_config ) {
 }
 
 my $grep_arg = join '', map { " -e $_" } grep { !/^\s*#/  } @ignore_patterns;
-my $grep_cmd = qq(find -L $dir | egrep -v $grep_arg);
+my $grep_cmd = qq(find -L $dir -type f | egrep -v $grep_arg);
 
 system($grep_cmd);
