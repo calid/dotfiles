@@ -1,0 +1,25 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use v5.10;
+
+my $find_dir = $ARGV[0];
+
+my $ignore_config = "$ENV{HOME}/.ctrlp.ignore";
+my @ignore_patterns;
+
+if ( -f $ignore_config ) {
+    open my $ignore_fh, '<', $ignore_config;
+
+    for my $ignore (<$ignore_fh>) {
+        chomp $ignore;
+        push @ignore_patterns, $ignore;
+    }
+}
+
+my @find_ignores = map { " -not -name $_" } @ignore_patterns;
+my $find_arg = join ' -and', @find_ignores;
+
+my $find_cmd = qq(find -L $find_dir -type f$find_arg);
+system($find_cmd);
