@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use v5.10;
 
-my $find_dir = $ARGV[0];
+my $dir = $ARGV[0];
 
 my $ignore_config = "$ENV{HOME}/.ctrlp.ignore";
 my @ignore_patterns;
@@ -18,8 +18,7 @@ if ( -f $ignore_config ) {
     }
 }
 
-my @find_ignores = map { " -not -name $_" } @ignore_patterns;
-my $find_arg = join ' -and', @find_ignores;
+my $grep_arg = join '', map { " -e $_" } grep { !/^\s*#/  } @ignore_patterns;
+my $grep_cmd = qq(find -L $dir | egrep -v $grep_arg);
 
-my $find_cmd = qq(find -L $find_dir -type f$find_arg);
-system($find_cmd);
+system($grep_cmd);
