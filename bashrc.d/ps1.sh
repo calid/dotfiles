@@ -1,10 +1,3 @@
-export GIT_PS1_SHOWDESCRIBE=1
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWUPSTREAM=auto
-
-export PS1_SHOWUSER=1
 
 scriptdir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 . "$scriptdir/bash-preexec/bash-preexec.sh"
