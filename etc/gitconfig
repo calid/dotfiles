@@ -6,7 +6,7 @@
     user = calid
 
 [color]
-    ui = always
+    ui = auto
 
 [core]
     excludesfile = /etc/gitignore
