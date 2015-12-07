@@ -24,7 +24,7 @@ _gradle()
         find . -name build.gradle 2> /dev/null \
              | sort -u \
              | xargs cat \
-             | git hash-object --stdin\
+             | git hash-object --stdin \
         )
   else # no top-level gradle file
     checksum='no_gradle_files'
