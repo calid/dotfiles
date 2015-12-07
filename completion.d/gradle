@@ -34,7 +34,7 @@ _gradle()
     commands=$(cat $cache_dir/$checksum)
   else # not cached! boo-urns!
     commands=$(\
-      $cur_cmd tasks \
+      $cur_cmd tasks --all \
         | sed -e 0,/Build/d -e '/Rules/,$d' \
         | awk 'BEGIN {p=0} /^-+/ {p=1} /^$/ {p=0} /^[^-]/ {if (p) print $1}'
     )
