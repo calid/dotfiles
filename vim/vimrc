@@ -56,9 +56,6 @@
     nmap <c-q> <c-w>q
 
     map <silent> <Leader>wb :%s:\s\+$::<cr>
-    map <silent> <Leader>mm :w<cr>:silent make<cr>:cope<cr>:redraw!<cr>
-
-    map <Leader>co :cope<cr>
 
 "
 " Pathogen
@@ -99,11 +96,26 @@
 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
+    let g:syntastic_loc_list_height = 5
+    let g:syntastic_auto_jump = 1
     let g:syntastic_check_on_wq = 0
 
     let g:syntastic_java_checkers=['javac']
     let g:syntastic_java_javac_config_file_enabled = 1
+    let g:syntastic_java_javac_sort = 1
+
+    map <Leader>lo :lopen<cr>
+    map <Leader>lc :lclose<cr>
+
+    " ctrl-up, ctrl-down
+    map [A         :lprev<cr>
+    map [B         :lnext<cr>
+
+    map <PageUp>   :lfirst<cr>
+    map <PageDown> :llast<cr>
+
+    map <Leader>mm :SyntasticCheck<cr>
+    map <Leader>sr :SyntasticReset<cr>
 
 "
 " NERDTree
