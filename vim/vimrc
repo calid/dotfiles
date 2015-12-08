@@ -116,6 +116,7 @@
 
     map <Leader>mm :SyntasticCheck<cr>
     map <Leader>sr :SyntasticReset<cr>
+    map <Leader>si :SyntasticInfo<cr>
 
 "
 " NERDTree
