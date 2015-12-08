@@ -104,6 +104,9 @@
     let g:syntastic_java_javac_config_file_enabled = 1
     let g:syntastic_java_javac_sort = 1
 
+    let g:syntastic_perl_checkers=['perl']
+    let g:syntastic_enable_perl_checker = 1
+
     map <Leader>lo :lopen<cr>
     map <Leader>lc :lclose<cr>
 
