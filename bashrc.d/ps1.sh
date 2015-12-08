@@ -30,7 +30,7 @@ function _refresh_history {
 
 function _set_window_title {
     local cmd="$1"
-    printf "\\033]2;$cmd\\033\\\\"
+    printf "\\033]2;%q\\033\\\\" "$cmd"
 }
 
 # get the last signal number listed by kill -l
