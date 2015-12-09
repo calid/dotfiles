@@ -2,7 +2,7 @@
 
 lang=${1:-java}
 
-mkdir -pv src/{main,test}/$lang/
+mkdir -pv src/{main,test}/{$lang,resources}/
 
 gradle wrapper
 
