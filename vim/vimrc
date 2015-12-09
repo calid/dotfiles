@@ -117,7 +117,7 @@
     map <PageUp>   :lfirst<cr>
     map <PageDown> :llast<cr>
 
-    map <Leader>mm :SyntasticCheck<cr>
+    map <Leader>mm :w<cr> :SyntasticCheck<cr>
     map <Leader>sr :SyntasticReset<cr>
     map <Leader>si :SyntasticInfo<cr>
 
