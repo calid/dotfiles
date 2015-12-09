@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author: Dylan Cali <calid1984@gmail.com>
-# https://github.com/calid/configz/blob/master/scripts/256colors.sh
+# https://github.com/calid/configz/blob/master/scripts/256colors
 
 # My own take on 256colors printing.. print the color numbers or html color
 # codes in a block, wrapping at terminal column width
