@@ -1,0 +1,12 @@
+#!/bin/bash
+
+lang=${1:-java}
+
+mkdir -pv src/{main,test}/$lang/
+
+gradle wrapper
+
+cat <<END >.gitignore
+build/
+.gradle/
+END
