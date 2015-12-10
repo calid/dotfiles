@@ -32,7 +32,6 @@
     set sw=4
     set ts=4
     set sts=4
-    let g:maxwidth=78
     set vb t_vb=
     set modeline
     set tags+=.ctags.tags
@@ -201,7 +200,7 @@
     function ToggleTextWidth()
     if !exists("b:toggleTw") || !b:toggleTw
         let b:toggleTw=1
-        let &tw=g:maxwidth
+        let &tw=b:maxwidth
     else
         let b:toggleTw=0
         set tw=0
@@ -239,5 +238,19 @@
 " colorcolumn
 "
     " set "no man's land" past max line width to black background
-    let &colorcolumn=join(range(g:maxwidth+1,999),",")
     hi ColorColumn ctermbg=232 guibg=#080808
+
+    command -nargs=1 SetColorColumn call SetColorColumn(<f-args>)
+
+    function SetColorColumn(maxwidth)
+        let b:maxwidth=a:maxwidth
+        let &colorcolumn=join(range(b:maxwidth+1,999),",")
+    endfunction
+
+"
+" autocmds
+"
+    au BufEnter * call SetDefaultOptions()
+    function SetDefaultOptions()
+        call SetColorColumn(78)
+    endfunction
