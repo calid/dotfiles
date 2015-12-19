@@ -90,8 +90,8 @@
 " Syntastic
 "
     let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_loc_list_height = 5
+    let g:syntastic_auto_loc_list = 0
+    let g:syntastic_loc_list_height = 10
     let g:syntastic_check_on_wq = 0
 
     let g:syntastic_java_checkers=['javac']
@@ -104,12 +104,11 @@
     map <Leader>lo :lopen<cr>
     map <Leader>lc :lclose<cr>
 
-    " ctrl-up, ctrl-down
+    map <Leader>lf :lfirst<cr>
+    map <Leader>ll :llast<cr>
+
     map [A         :lprev<cr>
     map [B         :lnext<cr>
-
-    map <PageUp>   :lfirst<cr>
-    map <PageDown> :llast<cr>
 
     map <Leader>mm :w<cr> :SyntasticCheck<cr>
     map <Leader>sr :SyntasticReset<cr>
