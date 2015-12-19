@@ -241,5 +241,6 @@
     au BufEnter * call SetDefaultOptions()
     function SetDefaultOptions()
         set formatoptions-=o
+        let  b:syntastic_mode='passive'
         call SetColorColumn(78)
     endfunction
