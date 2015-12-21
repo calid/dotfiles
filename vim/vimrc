@@ -113,6 +113,7 @@
     map <Leader>mm :w<cr> :SyntasticCheck<cr>
     map <Leader>sr :SyntasticReset<cr>
     map <Leader>si :SyntasticInfo<cr>
+    map <Leader>st :SyntasticToggleMode<cr>
 
 "
 " NERDTree
@@ -240,6 +241,5 @@
     au BufEnter * call SetDefaultOptions()
     function SetDefaultOptions()
         set formatoptions-=o
-        let  b:syntastic_mode='passive'
         call SetColorColumn(78)
     endfunction
