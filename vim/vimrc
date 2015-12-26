@@ -241,5 +241,6 @@
     au BufEnter * call SetDefaultOptions()
     function SetDefaultOptions()
         set formatoptions-=o
+        set formatoptions+=r
         call SetColorColumn(78)
     endfunction
