@@ -75,12 +75,19 @@
     " let g:ctrlp_working_path_mode = 'w'
     let g:ctrlp_by_filename = 0
     let g:ctrlp_user_command = {
-        \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-            \ 3: ['.svn', expand('<sfile>:p:h').'/tools/ctrlp_svn_user_command %s'],
-        \ },
-        \ 'fallback': expand('<sfile>:p:h').'/tools/ctrlp_fallback_user_command %s'
+      \ 'types': {
+        \ 1: [
+        \     '.git',
+        \     'cd %s && git ls-files . --cached --exclude-standard --others'
+        \    ],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        \ 3: [
+        \     '.svn',
+        \     expand('<sfile>:p:h').'/tools/ctrlp_svn_user_command %s'
+        \    ],
+      \ },
+      \ 'fallback':
+      \     expand('<sfile>:p:h').'/tools/ctrlp_fallback_user_command %s'
     \ }
     nnoremap <Leader>bf :CtrlP<cr>
     nnoremap <Leader>bb :CtrlPBuffer<cr>
