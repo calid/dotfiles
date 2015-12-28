@@ -4,6 +4,10 @@
 git clone https://github.com/calid/configz.git --recurse-submodules
 ```
 
+### Caveat Emptor ###
+
+These configurations are provided as-is, without warranty or guarantees. They work for me, but they may not work for you. You should review these files before using them and modify them based on your needs. You have been warned.
+
 ### Vim ###
 
 ```
