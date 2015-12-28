@@ -21,6 +21,7 @@ ln -sv configz/skel/{.profile,.bash_profile,.bashrc} ~/
 ln -sv configz/profile.d ~/.profile.d
 ln -sv configz/bashrc.d ~/.bashrc.d
 ```
+one-time/login configurations are under `profile.d` (e.g. environment variables). per-shell/interactive configurations are under `bashrc.d` (e.g. prompt & aliases).
 
 The prompt configuration expects a custom version of bash and/or readline. You can find details and instructions [here](https://github.com/calid/bash).
 
