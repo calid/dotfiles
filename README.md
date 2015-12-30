@@ -27,3 +27,7 @@ one-time/login configurations are under `profile.d` (e.g. environment variables)
 The prompt configuration expects a custom version of bash and/or readline. You can find details and instructions [here](https://github.com/calid/bash).
 
 Alternatively, if you don't care about the custom behavior remove `\\m` from the PS1 in [bashrc.d/ps1.sh](https://github.com/calid/dotfiles/blob/14d9ac3487a47cde2a4f0539d5e31b3e064eb1f4/bashrc.d/ps1.sh#L121) and set `show-mode-in-prompt` to `off` in [etc/inputrc](https://github.com/calid/dotfiles/blob/caa9797df1e1bdc12b41f311ab7edc064400d730/etc/inputrc#L6).
+
+### etc ###
+
+symlink the files under `etc` as appropriate
