@@ -1,14 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]
-then
-    echo "Usage: $(basename $0) <wiki-root> <host> <port>"
-    exit 1
-fi
+# Usage: start-gollum [ wiki-root [host [port] ] ]
 
-wiki_root="$1"
-host="$2"
-port="$3"
+wiki_root="${1-./}"
+host="${2-localhost}"
+port="${3-0}"
+
+log="$HOME/var/gollum_$$.log"
+
+mkdir -p $HOME/var
 
 gollum \
     --host $host --port $port \
@@ -16,4 +16,14 @@ gollum \
     --show-all \
     --mathjax \
     --user-icons gravatar \
-    "$wiki_root"
+    "$wiki_root" &>$log &
+
+port=""
+while test -z "$port"; do
+    port=$(grep -hPo 'port=\d+' $log | sed 's/port=//')
+    sleep 1
+done
+
+pid=$(grep -hPo 'pid=\d+' $log | sed 's/pid=//')
+echo "pid=$pid port=$port"
+firefox http://${host}:${port} &>/dev/null &
