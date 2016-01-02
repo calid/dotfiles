@@ -6,7 +6,7 @@ wiki_root="${1-./}"
 host="${2-localhost}"
 port="${3-0}"
 
-log="$HOME/var/gollum_$$.log"
+log="$wiki_root/gollum.log"
 
 mkdir -p $HOME/var
 
