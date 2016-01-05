@@ -68,6 +68,11 @@
     nnoremap <Leader>ag :Ag <cword><cr>
 
 "
+" format xml
+"
+    map <silent> <Leader>xf !xmllint --format -<cr>
+
+"
 " CtrlP
 "
     let g:ctrlp_map = ''
