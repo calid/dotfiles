@@ -308,7 +308,7 @@ __git_ps1 ()
 
 			if [ -n "${GIT_PS1_SHOWDESCRIBE-}" ]; then
 				d="$(git describe --tags 2>/dev/null | \
-					 sed -r 's/-g[0-9a-zA-Z]+$//')"
+					 \sed -r 's/-g[0-9a-zA-Z]+$//')"
 
 				if [ -n "$d" ]; then
 					if [ $(git describe --tags --exact-match 2>/dev/null) ]

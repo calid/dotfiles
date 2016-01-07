@@ -1,4 +1,5 @@
-alias grep='grep --color=auto'
+alias grep='grep -P --color=auto'
+alias sed='sed -r'
 alias gits='git status -s'
 alias ls='ls --color=auto'
 alias cpanm='cpanm -v'
