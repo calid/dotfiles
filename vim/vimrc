@@ -232,6 +232,25 @@
     endfunction
 
 "
+" Toggle VeryMagic
+"
+    nnoremap <silent> <Leader>vm :VMagicToggle<cr>
+    command VMagicToggle call ToggleVMagic()
+
+    function ToggleVMagic()
+    if !exists("b:toggleVmagic") || !b:toggleVmagic
+        let b:toggleVmagic=1
+        let g:VeryMagic=0
+    else
+        let b:toggleVmagic=0
+        let g:VeryMagic=1
+    endif
+
+    let g:VeryMagic
+
+    endfunction
+
+"
 " indentLine
 "
     let g:indentLine_enabled    = 0
