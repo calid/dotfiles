@@ -54,7 +54,7 @@
     nmap <c-k> <c-w>k
     nmap <c-q> <c-w>q
 
-    map <silent> <Leader>wb :%s:\s\+$::<cr>
+    map <silent> <Leader>wb :%s:\s+$::<cr>
 
 "
 " Pathogen
