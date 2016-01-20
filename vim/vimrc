@@ -73,11 +73,6 @@
     map <silent> <Leader>xf !xmllint --format -<cr>
 
 "
-" EnchantedVim
-"
-    let g:VeryMagicSubstitute = 1
-
-"
 " CtrlP
 "
     let g:ctrlp_map = ''

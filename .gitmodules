@@ -52,6 +52,3 @@
 [submodule "vim/bundle/CRDispatcher"]
 	path = vim/bundle/CRDispatcher
 	url = https://github.com/coot/CRDispatcher.git
-[submodule "vim/bundle/EnchantedVim"]
-	path = vim/bundle/EnchantedVim
-	url = https://github.com/coot/EnchantedVim.git
