@@ -253,6 +253,15 @@
     endfunction
 
 "
+" Identify Highlight Group
+"
+    function! SyntaxItem()
+        return synIDattr(synID(line("."),col("."),1),"name")
+    endfunction
+
+    command SynId echo SyntaxItem()
+
+"
 " indentLine
 "
     let g:indentLine_enabled    = 0
