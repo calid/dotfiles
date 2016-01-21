@@ -52,3 +52,6 @@
 [submodule "vim/bundle/CRDispatcher"]
 	path = vim/bundle/CRDispatcher
 	url = https://github.com/coot/CRDispatcher.git
+[submodule "vim/bundle/vim-instant-markdown"]
+	path = vim/bundle/vim-instant-markdown
+	url = https://github.com/suan/vim-instant-markdown.git

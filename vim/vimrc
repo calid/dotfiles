@@ -73,6 +73,12 @@
     map <silent> <Leader>xf !xmllint --format -<cr>
 
 "
+" instant-markdown
+"
+    let g:instant_markdown_autostart = 0
+    map <silent> <Leader>mp :InstantMarkdownPreview<cr>
+
+"
 " CtrlP
 "
     let g:ctrlp_map = ''
