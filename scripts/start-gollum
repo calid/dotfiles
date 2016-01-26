@@ -26,4 +26,4 @@ done
 
 pid=$(grep -hPo 'pid=\d+' $log | sed 's/pid=//')
 echo "pid=$pid port=$port"
-firefox http://${host}:${port} &>/dev/null &
+xdg-open "http://${host}:${port}" &>/dev/null &
