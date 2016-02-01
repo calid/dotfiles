@@ -24,7 +24,7 @@ runtime syntax/mail.vim
 hi mailEmail ctermfg=14 guifg=#00ffff
 hi link mailURL Underlined
 
-if getline(1) =~ 'Perl'
+if getline(1) =~ 'User Contributed Perl Documentation'
 
   unlet b:current_syntax
   syn clear manReference
