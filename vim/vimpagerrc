@@ -1,3 +1,4 @@
 colorscheme wombat256mod
 set nomodifiable
 set noswapfile
+map <silent> ,cs :let @/ = ""<cr>
