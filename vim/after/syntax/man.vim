@@ -8,11 +8,6 @@ syn match manTitle "^[A-Z][-:A-Z]\+([0-9]\+[a-z]\=).*"
 syn match manSubHeading "^\s\{3\}\w.*$"
 syn match manSectionHeading "^[A-Z][^(]\+\s.*$"
 
-syn match manLink "\s\(\u[’'a-z]\+\s\)*\u[’'a-z]\+\[[1-9]\]"ms=s+1
-syn match manLink "\<http://\S\+"
-
-hi link manLink Underlined
-
 syn clear manOptionDesc
 syn clear manLongOptionDesc
 
@@ -21,6 +16,13 @@ syn match  manLongOptionDesc  "\(^\|[[{(/|, ]\)--\(\[[^]]\+\]\)\?\w\(\w\|-\)\+"m
 
 hi manOptionDesc ctermfg=216 guifg=#ffaf87
 hi link manLongOptionDesc manOptionDesc
+
+unlet b:current_syntax
+
+runtime syntax/mail.vim
+
+hi mailEmail term=bold cterm=bold ctermfg=81 guifg=#5fd7ff
+hi link mailURL Underlined
 
 if getline(1) =~ 'Perl'
 
@@ -43,3 +45,5 @@ runtime ftplugin/man.vim
 set buftype=nofile
 silent file $CUR_MANFILE
 redraw!
+
+let b:current_syntax = "man"
