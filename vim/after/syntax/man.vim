@@ -21,7 +21,7 @@ unlet b:current_syntax
 
 runtime syntax/mail.vim
 
-hi mailEmail term=bold cterm=bold ctermfg=81 guifg=#5fd7ff
+hi mailEmail ctermfg=14 guifg=#00ffff
 hi link mailURL Underlined
 
 if getline(1) =~ 'Perl'
