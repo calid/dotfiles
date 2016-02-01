@@ -36,7 +36,8 @@ elseif getline(1) =~ '^[a-zA-Z_]\+([23])'
 
   syntax include @cCode vimruntime! syntax/c.vim
   syn match manCFuncDefinition  display "\<\h\w*\>\s*("me=e-1 contained
-  syn region manSynopsis start="\v^(SYNOPSIS|EXAMPLE)"hs=s+8 end="^\u.*$"me=e-12 keepend contains=manSectionHeading,@cCode,manCFuncDefinition
+  syn region manSynopsis start="^SYNOPSIS"hs=s+8 end="^\s\{0,6\}\u"me=e-1 contains=manSectionHeading,@cCode,manCFuncDefinition
+  syn region manSynopsis start="^EXAMPLE"hs=s+8 end="^\u.*$"me=e-12 keepend contains=manSectionHeading,@cCode,manCFuncDefinition
 
 endif
 
