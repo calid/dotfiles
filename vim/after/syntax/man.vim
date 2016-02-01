@@ -4,7 +4,7 @@ syn match manReference "\f\+[-,‐]\n\s\+\f\+([n1-9][a-z]\=)"
 
 hi manReference term=bold cterm=bold ctermfg=141 guifg=#af87ff
 
-syn match manTitle "^[A-Z][-:A-Z]\+([0-9]\+[a-z]\=).*"
+syn match manTitle "^[A-Z][-_:A-Z]\+([0-9]\+[a-z]\=).*"
 syn match manSubHeading "^\s\{3\}\w.*$"
 syn match manSectionHeading "^[A-Z][^(]\+\s.*$"
 
