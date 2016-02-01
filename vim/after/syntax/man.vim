@@ -17,7 +17,7 @@ syn clear manOptionDesc
 syn clear manLongOptionDesc
 
 syn match  manOptionDesc      "\(^\|[[{(|, ]\)[+-]\w\+"ms=s+1
-syn match  manLongOptionDesc  "\(^\|[[{(|, ]\)--\w\(\w\|-\)\+"ms=s+1
+syn match  manLongOptionDesc  "\(^\|[[{(|, ]\)--\(\[[^]]\+\]\)\?\w\(\w\|-\)\+"ms=s+1
 
 hi manOptionDesc ctermfg=216 guifg=#ffaf87
 hi link manLongOptionDesc manOptionDesc
