@@ -73,6 +73,13 @@
     map <silent> <Leader>xf !xmllint --format -<cr>
 
 "
+" Show tabs and spaces when listchars is on
+"
+    nmap <leader>is :set list!<CR>
+    set listchars=tab:▸\ ,space:.
+    hi SpecialKey ctermfg=241 ctermbg=234 guifg=#e3e0d7 guibg=#242424
+
+"
 " instant-markdown
 "
     let g:instant_markdown_autostart = 0
