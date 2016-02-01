@@ -1,0 +1,45 @@
+
+urxvt.background: #1c1c1c
+urxvt.foreground: #d0d0d0
+urxvt.cursorUnderline: true
+urxvt.underlineColor: #FFFF00
+urxvt.font: xft:DejaVu Sans Mono-9:bold:spacing=mono:antialias=true:autohint=true
+
+urxvt.scrollColor: #5f5f5f
+urxvt.scrollBar: 0
+urxvt.fading: 0
+
+! black, bright black
+urxvt.color0:    #000000
+urxvt.color8:    #747474
+
+! red, bright red
+urxvt.color1:    #fe5757
+urxvt.color9:    #fe5757
+
+! green, bright green
+urxvt.color2:    #60fe57
+urxvt.color10:   #60fe57
+
+! yellow, bright yellow
+urxvt.color3:    #fefe57
+urxvt.color11:   #fefe57
+
+! blue,bright blue
+urxvt.color4:    #508eff
+urxvt.color12:   #508eff
+
+! magenta, bright magenta
+urxvt.color5:    #fe57e5
+urxvt.color13:   #fe57e5
+
+! cyan, bright cyan
+urxvt.color6:    #87ffff
+urxvt.color14:   #87ffff
+
+! white, bright white
+urxvt.color7:    #e2e2e2
+urxvt.color15:   #e2e2e2
+
+urxvt.loginShell: true
+urxvt.perl-ext-common: default,clipboard
