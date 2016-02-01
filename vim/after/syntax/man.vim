@@ -1,6 +1,6 @@
 syn clear manReference
-syn match manReference "\f\+([1-9][a-z]\=)"
-syn match manReference "\f\+[-,‐]\n\s\+\f\+([1-9][a-z]\=)"
+syn match manReference "\f\+([n1-9][a-z]\=)"
+syn match manReference "\f\+[-,‐]\n\s\+\f\+([n1-9][a-z]\=)"
 
 hi manReference term=bold cterm=bold ctermfg=141 guifg=#af87ff
 
