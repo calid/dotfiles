@@ -13,3 +13,7 @@
 
 [push]
     default = current
+[diff]
+	tool = vimdiff
+[rebase]
+	autosquash = true
