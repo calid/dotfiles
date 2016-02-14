@@ -58,3 +58,6 @@
 [submodule "scripts/vimpager.git"]
 	path = scripts/vimpager.git
 	url = https://github.com/rkitover/vimpager.git
+[submodule "vim/bundle/let-modeline.vim"]
+	path = vim/bundle/let-modeline.vim
+	url = https://github.com/vim-scripts/let-modeline.vim
