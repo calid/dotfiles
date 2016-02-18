@@ -1,5 +1,5 @@
 
-au BufEnter * if &ft ==# "java" | call SetJavaOptions() | endif
+au BufEnter * if &ft ==# "java" || &ft ==# "groovy" | call SetJavaOptions() | endif
 function! SetJavaOptions()
     set fo-=o
     set fo+=r
