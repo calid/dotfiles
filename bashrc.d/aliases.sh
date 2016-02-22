@@ -8,5 +8,5 @@ alias gview='gvim -R'
 alias vi='vim -v -u NONE'
 
 function diff {
-    colordiff -u $@ | less
+    colordiff -u "$@" | less
 }
