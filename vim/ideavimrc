@@ -1,0 +1,35 @@
+"
+" Basic editor settings
+"
+    set visualbell
+    set hls
+    set ignorecase
+    set nu
+    set smartcase
+
+"
+" Basic editor bindings
+"
+    let mapleader = ","
+
+    nmap <Leader>bq :qa<cr>
+
+    nmap <c-h> <c-w>h
+    nmap <c-l> <c-w>l
+    nmap <c-j> <c-w>j
+    nmap <c-k> <c-w>k
+    nmap <c-q> <c-w>q
+
+"
+" IDEA Specific bindings
+"
+    nmap <Leader>bd :action CloseContent<cr>
+
+    nmap <Leader>en :action GotoNextError<cr>
+    nmap <Leader>ep :action GotoPreviousError<cr>
+
+    nmap <Leader>jd :action QuickJavaDoc<cr>
+    nmap <Leader>jo :action OptimizeImports<cr>
+
+    nmap <Leader>vi :action Tool_External Tools_vim<cr>
+    nmap <Leader>sh :action Tool_External Tools_iterm<cr>
