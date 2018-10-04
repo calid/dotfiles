@@ -61,3 +61,9 @@
 [submodule "vim/bundle/let-modeline.vim"]
 	path = vim/bundle/let-modeline.vim
 	url = https://github.com/vim-scripts/let-modeline.vim
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
