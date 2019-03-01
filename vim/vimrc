@@ -9,6 +9,7 @@
 
     filetype plugin indent on
 
+    set autoread
     set autoindent
     set backspace=indent,eol,start
     set complete-=i
@@ -55,6 +56,12 @@
     nmap <c-q> <c-w>q
 
     map <silent> <Leader>wb :%s:\v\s+$::<cr>
+
+"
+" C include path
+"
+    set path+=$HOME/usr/include
+    let g:syntastic_c_include_dirs = [$HOME.'/usr/include']
 
 "
 " Pathogen
@@ -126,7 +133,10 @@
     let g:syntastic_perl_checkers=['perl']
     let g:syntastic_enable_perl_checker = 1
 
+    let g:syntastic_python_checkers = ['python', 'flake8']
+
     let g:syntastic_javascript_checkers = ["standard"]
+    map <silent><Leader>jf :silent exec "!standard --fix"<cr>:SyntasticCheck<cr>
 
     map <Leader>lo :lopen<cr>
     map <Leader>lc :lclose<cr>

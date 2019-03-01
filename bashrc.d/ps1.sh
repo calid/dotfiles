@@ -117,6 +117,5 @@ function _set_ps1 {
     fi
 
     path="${gray}\w${x}"
-
-    PS1="${start}${git_ps1}${path}\n${state}\\m "
+    PS1="${start}${git_ps1}${path}\n${state}\[\e[38;5;246m\]▶\[\e[0m\] "
 }

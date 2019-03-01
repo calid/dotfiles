@@ -67,3 +67,9 @@
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/tern_for_vim"]
+	path = vim/bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "submodules/git-cinnabar"]
+	path = submodules/git-cinnabar
+	url = https://github.com/glandium/git-cinnabar.git

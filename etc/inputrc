@@ -3,7 +3,7 @@
 
 set keyseq-timeout 0
 set editing-mode vi
-set show-mode-in-prompt on
+set show-mode-in-prompt off
 set vi-ins-mode-string ""
 set vi-cmd-mode-string "!"
 
