@@ -84,6 +84,7 @@ function _set_ps1 {
     local start
     local git_ps1
     local path
+    local pyenv
 
     bind 'set vi-ins-mode-string \1\e[38;5;246m\2▶\1\e[0m\2'
     bind 'set vi-cmd-mode-string \1\e[33;1m\2⚑\1\e[0m\2'
@@ -116,6 +117,12 @@ function _set_ps1 {
         git_ps1=' '
     fi
 
+    pyenv="${VIRTUAL_ENV##*/}"
+    if [ "$pyenv" != '' ]
+    then
+        pyenv="($pyenv)"
+    fi
+
     path="${gray}\w${x}"
-    PS1="${start}${git_ps1}${path}\n${state}\[\e[38;5;246m\]▶\[\e[0m\] "
+    PS1="${start}${git_ps1}${path}\n${pyenv}${state}\[\e[38;5;246m\]▶\[\e[0m\] "
 }
