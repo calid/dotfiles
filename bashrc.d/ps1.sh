@@ -86,8 +86,9 @@ function _set_ps1 {
     local path
     local pyenv
 
-    bind 'set vi-ins-mode-string \1\e[38;5;246m\2▶\1\e[0m\2'
-    bind 'set vi-cmd-mode-string \1\e[33;1m\2⚑\1\e[0m\2'
+    # bind 'set vi-ins-mode-string \1\e[38;5;246m\2▶\1\e[0m\2'
+    bind 'set vi-ins-mode-string \1\e[38;5;207m\2●\1\e[0m\2'
+    bind 'set vi-cmd-mode-string \1\e[38;5;226m\2⚑\1\e[0m\2'
 
     if [ $UID == 0 ]
     then
@@ -97,7 +98,7 @@ function _set_ps1 {
     fi
 
     if [ $status -eq 0 ]; then
-        state="${gray}[${green}✔${gray}]${x}"
+        state="${gray}[${green}✓${gray}]${x}"
     elif [ $status -eq 1 ]; then
         state="${gray}[${red}✘${gray}]${x}"
     else
