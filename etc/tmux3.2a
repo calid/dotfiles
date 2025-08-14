@@ -1,7 +1,7 @@
 
 set -g prefix C-a
 bind C-a send-prefix
-set -s escape-time 0
+set -s escape-time 10
 
 set -g default-terminal screen-256color
 

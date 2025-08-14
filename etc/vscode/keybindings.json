@@ -1,0 +1,133 @@
+// Place your key bindings in this file to override the defaults
+// In VS Code F1 -> Open Keyboard Shortcuts (JSON)
+// Overrides control commands to be passthrough when termianl focused
+// so Vim bindings work in terminal.  When in editor focus control
+// passthrough is handled by Vim vscode extension settings
+[
+  {
+    "key": "alt+Right",
+    "command": "workbench.action.terminal.focus"
+    // "when": "editorFocus"
+  },
+  {
+    "key": "alt+Down",
+    "command": "workbench.action.terminal.focus"
+    // "when": "editorFocus"
+  },
+  {
+    "key": "alt+Left",
+    "command": "workbench.action.focusActiveEditorGroup"
+    // "when": "terminalFocus"
+  },
+  {
+    "key": "alt+Up",
+    "command": "workbench.action.focusActiveEditorGroup"
+    // "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.previousEditor",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.nextEditor",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "ctrl+e",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "ctrl+y",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "ctrl+u",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "ctrl+d",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "ctrl+v",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "ctrl+h",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "ctrl+j",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "ctrl+k",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "ctrl+l",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "ctrl+q",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "ctrl+p",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "ctrl+n",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "ctrl+f",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  }
+]
+
