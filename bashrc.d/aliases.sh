@@ -10,3 +10,22 @@ alias vi='vim -v -u NONE'
 function diff {
     colordiff -u "$@" | less
 }
+
+whatismyip () {
+    curl checkip.amazonaws.com
+}
+
+find_invalid_nb () {
+    local dir="$1"
+
+    if test -z "$1"
+    then
+        echo 'find_invalid_nb <directory>'
+        return 1
+    fi
+
+    for f in $(find "$dir" -type f -name '*.ipynb')
+    do
+        echo $f && cat $f | jq -e . &>/dev/null || echo "$f is invalid"
+    done | grep invalid
+}

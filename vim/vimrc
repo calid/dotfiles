@@ -308,5 +308,5 @@
     function SetDefaultOptions()
         set formatoptions-=o
         set formatoptions+=r
-        call SetColorColumn(78)
+        call SetColorColumn(80)
     endfunction
